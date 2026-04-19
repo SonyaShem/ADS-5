@@ -63,7 +63,7 @@ int eval(const std::string& pref) {
             int b = st.top(); st.pop();
             int a = st.top(); st.pop();
             int res = 0;
-            if (post[i] == '+') res = a + b;
+            if (pref[i] == '+') res = a + b;
             else if (pref[i] == '-') res = a - b;
             else if (pref[i] == '*') res = a * b;
             else if (pref[i] == '/') res = a / b;
