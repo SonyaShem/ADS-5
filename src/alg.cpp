@@ -49,12 +49,12 @@ std::string infx2pstfx(const std::string& inf) {
 
 int eval(const std::string& pref) {
     TStack<int, 100> st;
-    for (size_t i = 0; i < post.size(); i++) {
-        if (post[i] == ' ') continue;
-        if (isdigit(post[i])) {
+    for (size_t i = 0; i < pref.size(); i++) {
+        if (pref[i] == ' ') continue;
+        if (isdigit(pref[i])) {
             int num = 0;
-            while (i < post.size() && isdigit(post[i])) {
-                num = num * 10 + (post[i] - '0');
+            while (i < pref.size() && isdigit(pref[i])) {
+                num = num * 10 + (pref[i] - '0');
                 i++;
             }
             st.push(num);
@@ -64,9 +64,9 @@ int eval(const std::string& pref) {
             int a = st.top(); st.pop();
             int res = 0;
             if (post[i] == '+') res = a + b;
-            else if (post[i] == '-') res = a - b;
-            else if (post[i] == '*') res = a * b;
-            else if (post[i] == '/') res = a / b;
+            else if (pref[i] == '-') res = a - b;
+            else if (pref[i] == '*') res = a * b;
+            else if (pref[i] == '/') res = a / b;
             st.push(res);
         }
     }
