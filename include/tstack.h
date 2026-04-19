@@ -2,33 +2,33 @@
 #ifndef INCLUDE_TSTACK_H_
 #define INCLUDE_TSTACK_H_
 
-template<typename T, int size>
+template<typename T, int kSize>
 class TStack {
-    private:
-        T data[size];
-        int topIndex;
+ private:
+  T data[kSize];
+  int topIndex;
 
-    public:
-        TStack() {
-            topIndex = -1;
-        }
+ public:
+  TStack() {
+    topIndex = -1;
+  }
 
-        bool empty() {
-            return topIndex == -1;
-        }
+  bool empty() {
+    return topIndex == -1;
+  }
 
-        void push(T value) {
-            topIndex++;
-            data[topIndex] = value;
-        }
+  void push(T value) {
+    topIndex++;
+    data[topIndex] = value;
+  }
 
-        void pop() {
-            topIndex--;
-        }
+  void pop() {
+    topIndex--;
+  }
 
-        T top() {
-            return data[topIndex];
-        }
+  T top() {
+    return data[topIndex];
+  }
 };
 
 #endif  // INCLUDE_TSTACK_H_
